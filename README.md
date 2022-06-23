@@ -21,7 +21,7 @@ Run as `root` user:
 
 ```
 apt install build-essential git cmake libusb-1.0-0-dev -y
-git clone https://github.com/bclswl0827/rtl-sdr.git
+git clone https://github.com/juliokrauss/rtl-sdr.git
 cd rtl-sdr
 mkdir build
 cd build
