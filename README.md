@@ -20,19 +20,19 @@ Original from this post: [Direct Sampling Mode in 820T2 DVB-T on Linux os &#8211
 Run as `root` user:
 
 ```
-root@pc:/home# apt install build-essential git cmake libusb-1.0 -y
-root@pc:/home# git clone https://github.com/bclswl0827/rtl-sdr.git
-root@pc:/home# cd rtl-sdr
-root@pc:/home/rtl-sdr# mkdir build
-root@pc:/home/rtl-sdr/build# cd build
-root@pc:/home/rtl-sdr/build# cmake .. -DDETACH_KERNEL_DRIVER=ON -DINSTALL_UDEV_RULES=ON
-root@pc:/home/rtl-sdr/build# make
-root@pc:/home/rtl-sdr/build# make install
-root@pc:/home/rtl-sdr/build# ldconfig
-root@pc:/home/rtl-sdr/build# bash -c 'echo -e "\n# for RTL-SDR:\nblacklist dvb_usb_rtl28xxu\n" >> /etc/modprobe.d/blacklist.conf'
-root@pc:/home/rtl-sdr/build# update-initramfs -u
-root@pc:/home/rtl-sdr/build# rmmod dvb_usb_rtl28xxu
-root@pc:/home/rtl-sdr/build# reboot
+apt install build-essential git cmake libusb-1.0-0-dev -y
+git clone https://github.com/bclswl0827/rtl-sdr.git
+cd rtl-sdr
+mkdir build
+cd build
+cmake .. -DDETACH_KERNEL_DRIVER=ON -DINSTALL_UDEV_RULES=ON
+make
+make install
+ldconfig
+bash -c 'echo -e "\n# for RTL-SDR:\nblacklist dvb_usb_rtl28xxu\n" >> /etc/modprobe.d/blacklist.conf'
+update-initramfs -u
+rmmod dvb_usb_rtl28xxu
+reboot
 ```
 
 ```
